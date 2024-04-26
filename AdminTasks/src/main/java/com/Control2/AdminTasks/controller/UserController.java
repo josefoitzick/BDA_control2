@@ -7,6 +7,7 @@ import com.Control2.AdminTasks.service.UserService;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/users")
 public class UserController {
     private final UserService userService;

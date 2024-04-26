@@ -10,25 +10,38 @@ public class TaskEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private long id_user;
     String title;
     String description;
     Date date;
 
-    public TaskEntity(long id, String title, String description, Date date) {
+
+    public TaskEntity(long id, long id_user, String title, String description, Date date) {
         this.id = id;
+        this.id_user = id_user;
         this.title = title;
         this.description = description;
         this.date = date;
     }
+
     public TaskEntity() {
 
     }
+
     public long getId() {
         return id;
     }
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public long getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(long id_user) {
+        this.id_user = id_user;
     }
 
     public String getTitle() {

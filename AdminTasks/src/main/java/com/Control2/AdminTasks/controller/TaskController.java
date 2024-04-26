@@ -7,6 +7,7 @@ import com.Control2.AdminTasks.entity.TaskEntity;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/tasks")
 public class TaskController {
     private final TaskService taskService;
