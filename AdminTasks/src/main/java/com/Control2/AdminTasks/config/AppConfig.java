@@ -1,7 +1,5 @@
 package com.Control2.AdminTasks.config;
 
-import com.Control2.AdminTasks.repository.UserRepository;
-import com.Control2.AdminTasks.repository.UserRepositoryImp;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import com.Control2.AdminTasks.repository.TaskRepository;
@@ -14,8 +12,11 @@ public class AppConfig {
     public TaskRepository taskRepository() {
         return new TaskRepositoryImp(); // o crea una instancia de tu implementación del repositorio aquí
     }
+    /*
     @Bean
     public UserRepository userRepository() {
         return new UserRepositoryImp(); // o crea una instancia de tu implementación del repositorio aquí
     }
+
+     */
 }
