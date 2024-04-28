@@ -26,7 +26,7 @@ public class TaskController {
         return taskService.findById(id);
     }
 
-    @PostMapping
+    @PostMapping(value = "create")
     public TaskEntity createTask(@RequestBody TaskEntity task) {
         return taskService.save(task);
     }
