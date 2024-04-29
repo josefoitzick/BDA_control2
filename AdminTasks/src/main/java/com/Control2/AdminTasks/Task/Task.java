@@ -4,7 +4,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @Builder
@@ -16,6 +16,7 @@ public class Task {
     private Long id_usertask;
     String title;
     String description;
-    Date due_date;
+    boolean completed;
+    LocalDate due_date;
 
 }
