@@ -1,5 +1,5 @@
-# Laboratorio 2 - Bases de datos Avanzadas
-## Este laboratorio fue desarrollado por el grupo n°2.
+# Control 2 - Bases de datos Avanzadas
+## Laboratorio desarrollado por el grupo n°2.
 ### Integrantes de grupo 2
 * Jose Foitzick
 * Fernando Iribarra
