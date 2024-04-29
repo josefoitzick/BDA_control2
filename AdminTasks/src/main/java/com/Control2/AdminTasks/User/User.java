@@ -1,6 +1,6 @@
 package com.Control2.AdminTasks.User;
 
-import jakarta.persistence.*;
+
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,17 +13,14 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User implements UserDetails {
-    @Id
-    @GeneratedValue
-    Integer id;
 
-    @Column(nullable = false)
+    Long id;
+
     String username;
     String lastname;
     String firstname;
     String country;
     String password;
-    @Enumerated(EnumType.STRING)
     Role role;
 
 

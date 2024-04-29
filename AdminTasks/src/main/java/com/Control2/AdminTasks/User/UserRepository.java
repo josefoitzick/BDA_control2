@@ -1,14 +1,14 @@
 package com.Control2.AdminTasks.User;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
+import java.util.List;
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<User,Integer> {
+public interface UserRepository {
     //query methods
     Optional<User> findByUsername(String username);
-    User findById(long id);
-
-
+    User save(User user);
+    List<User> findAll();
+    User findById(Long id);
+    User update(User user);
+    boolean deleteById(Long id);
 
 }

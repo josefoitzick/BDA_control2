@@ -1,4 +1,4 @@
-package Task;
+package com.Control2.AdminTasks.Task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
