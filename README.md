@@ -1,4 +1,4 @@
-# Laboratorio 2 - Taller de Base de Datos/Bases de datos Avanzadas
+# Laboratorio 2 - Bases de datos Avanzadas
 ## Este laboratorio fue desarrollado por el grupo n°2.
 ### Integrantes de grupo 2
 * Jose Foitzick
@@ -13,7 +13,7 @@
 * Postgres SQL versión 12
 * PgAdmin versión 4
 * Visual Studio Code
-* 
+  
 ## Backend
 * IntelliJ IDEA Ultimate
 * JDK versión 17
@@ -101,7 +101,7 @@ Frontend:
    
 ## 7. Ejecución del Proyecto desde IntelliJ IDEA
 
-1. Abre IntelliJ IDEA y abre tu proyecto de Vue.js en la carpeta de frontend.
+1. Abre IntelliJ IDEA y abre tu proyecto de Nuxt.js en la carpeta de frontend.
 
 2. Asegúrate de que todas las dependencias de tu proyecto estén instaladas. Puedes hacerlo ejecutando `npm install` desde la terminal en la carpeta de tu proyecto.
 
