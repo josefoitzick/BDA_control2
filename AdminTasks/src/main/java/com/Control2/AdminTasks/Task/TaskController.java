@@ -27,22 +27,22 @@ public class TaskController {
     @GetMapping
     public ResponseEntity<List<Task>> getAllTasks() {
         List<Task> tasks = taskService.getAllTasks();
-        return new ResponseEntity<>(tasks, HttpStatus.OK);
+        return ResponseEntity.ok(tasks);
     }
 
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<Task>> getTasksByUserId(@PathVariable Long userId) {
         List<Task> tasks = taskService.getTasksByUserId(userId);
-        return new ResponseEntity<>(tasks, HttpStatus.OK);
+        return ResponseEntity.ok(tasks);
     }
 
     @PutMapping
     public ResponseEntity<Task> updateTask(@RequestBody Task task) {
         Task updatedTask = taskService.updateTask(task);
         if (updatedTask != null) {
-            return new ResponseEntity<>(updatedTask, HttpStatus.OK);
+            return ResponseEntity.ok(updatedTask);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ResponseEntity.notFound().build();
         }
     }
 
@@ -50,9 +50,9 @@ public class TaskController {
     public ResponseEntity<Void> deleteTaskById(@PathVariable Long id) {
         boolean success = taskService.deleteTaskById(id);
         if (success) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return ResponseEntity.noContent().build();
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ResponseEntity.notFound().build();
         }
     }
 }

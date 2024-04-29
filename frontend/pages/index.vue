@@ -13,7 +13,7 @@ export default Vue.extend({
   },
   async mounted() {
     try {
-      const response = await fetch('http://localhost:8000/api/user', {
+      const response = await fetch('http://localhost:8080/auth/user', { //manera de autenticar, (no logrado)
         headers: {'Content-Type': 'application/json'},
         credentials: 'include',
       })

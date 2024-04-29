@@ -37,8 +37,6 @@ public class ApplicationConfig {
         return new BCryptPasswordEncoder();
 
     }
-
-
     @Bean
     public UserDetailsService userDetailService() {
         return username -> userRepository.findByUsername(username)
