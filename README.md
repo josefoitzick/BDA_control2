@@ -65,7 +65,7 @@ git clone https://github.com/josefoitzick/BDA_control2.git
 3. Ejecuta el Script SQL:
    Haz clic con el botón derecho en la base de datos seleccionada y elige "Query Tool" para abrir una ventana donde podrás ejecutar consultas SQL.
 
-4. En la ventana del "Query Tool", abre el archivo SQL que contiene el script que deseas ejecutar. Puedes hacerlo seleccionando "File" > "Open" y navegando hasta el archivo, en este caso siendo "dbCreate.sql" dentro de la carpeta "Database".
+4. En la ventana del "Query Tool", abre el archivo SQL que contiene el script que deseas ejecutar. Puedes hacerlo seleccionando "File" > "Open" y navegando hasta el archivo, en este caso siendo "CreateDB.sql" dentro de la carpeta "Database".
 
 5. Una vez abierto el archivo SQL, puedes ejecutarlo haciendo clic en el botón "Execute" o presionando la tecla F5.
 
