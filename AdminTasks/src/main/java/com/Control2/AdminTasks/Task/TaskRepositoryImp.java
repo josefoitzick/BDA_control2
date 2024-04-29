@@ -16,13 +16,13 @@ public class TaskRepositoryImp implements TaskRepository{
     @Override
     public Task save(Task task){
         try(Connection con = sql2o.open()){
-            Long id = (Long) con.createQuery("INSERT INTO Task (id_usertask, title, description, due_date, completed) " +
+            Long id = (Long) con.createQuery("INSERT INTO Task (id_usertask, title, description, completed, due_date) " +
                             "VALUES (:id_usertask, :title, :description, :due_date, :completed)")
                     .addParameter("id_usertask", task.getId_usertask())
                     .addParameter("title", task.getTitle())
                     .addParameter("description", task.getDescription())
-                    .addParameter("due_date", task.getDue_date())
                     .addParameter("completed", task.isCompleted())
+                    .addParameter("due_date", task.getDue_date())
                     .executeUpdate()
                     .getKey();
 
@@ -64,13 +64,13 @@ public class TaskRepositoryImp implements TaskRepository{
     public Task update(Task task) {
         try (Connection con = sql2o.open()) {
             con.createQuery("UPDATE Task SET id_usertask = :id_userTask, title = :title, " +
-                            "description = :description, due_date = :due_date, completed = :completed WHERE id = :id")
+                            "description = :description, completed = :completed, due_date = :due_date WHERE id = :id")
                     .addParameter("id", task.getId())
                     .addParameter("id_usertask", task.getId_usertask())
                     .addParameter("title", task.getTitle())
                     .addParameter("description", task.getDescription())
-                    .addParameter("due_date", task.getDue_date())
                     .addParameter("completed", task.isCompleted())
+                    .addParameter("due_date", task.getDue_date())
                     .executeUpdate();
             return task;
         } catch (Exception e) {
