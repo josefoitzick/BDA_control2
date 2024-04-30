@@ -90,6 +90,9 @@ Después de ejecutar el script, verifica que los datos se hayan cargado correcta
 
 ¡Listo! Ahora estás preparado para cargar datos en tu base de datos PostgreSQL desde un script SQL.
 
+NOTA: Antes de iniciar el proyecto, se ha de editar unos archivos de acuerdo a la base de datos y localhost establecidos:
+- AdminTasks/src/main/java/com/Control2/AdminTasks/config/DatabaseContext.java ------> editar el puerto localhost a su conveniencia, además del usuario y la contraseña
+- AdminTasks/src/main/resources/application.properties ----> editar el puerto localhost a su conveniencia, además del usuario, la contraseña y el nombre de la base de datos
 
 ## 6. Ejecución de un Proyecto de Vue.js
 
