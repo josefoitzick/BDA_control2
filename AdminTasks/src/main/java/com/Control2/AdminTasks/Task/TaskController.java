@@ -30,6 +30,12 @@ public class TaskController {
         return ResponseEntity.ok(tasks);
     }
 
+    @GetMapping("/completed/{completed}")
+    public ResponseEntity<List<Task>> getTasksByCompletion(@PathVariable boolean completed) {
+        List<Task> tasks = taskService.getTasksByCompletion(completed);
+        return ResponseEntity.ok(tasks);
+    }
+
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<Task>> getTasksByUserId(@PathVariable Long userId) {
         List<Task> tasks = taskService.getTasksByUserId(userId);

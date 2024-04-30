@@ -9,5 +9,6 @@ public interface TaskRepository {
     Task update(Task task);
     void deleteById(Long id);
     Task findById(Long id);
+    List<Task> findByCompleted(boolean completed);
 
 }

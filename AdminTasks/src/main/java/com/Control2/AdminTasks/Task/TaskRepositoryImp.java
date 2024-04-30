@@ -101,4 +101,16 @@ public class TaskRepositoryImp implements TaskRepository{
         }
     }
 
+    @Override
+    public List<Task> findByCompleted(boolean completed){
+        try (Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM Task WHERE completed = :completed")
+                    .addParameter("completed", completed)
+                    .executeAndFetch(Task.class);
+        } catch (Exception e) {
+            System.out.println("Error al obtener la tarea por completed: " + e.getMessage());
+            return null;
+        }
+    }
+
 }

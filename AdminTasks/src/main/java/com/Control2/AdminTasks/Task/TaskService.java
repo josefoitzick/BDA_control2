@@ -26,6 +26,8 @@ public class TaskService {
         return taskRepository.findByUserId(userId);
     }
 
+    public List<Task> getTasksByCompletion(boolean completed) { return taskRepository.findByCompleted(completed); }
+
     public Task updateTask(Task task) {
         // Verificar si la tarea existe antes de actualizarla
         Task existingTask = taskRepository.findById(task.getId());
