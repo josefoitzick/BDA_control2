@@ -15,6 +15,7 @@ CREATE TABLE Task (
     id_usertask BIGINT,
     title TEXT,
     description TEXT,
+    completed BOOL,
     due_date DATE,
     FOREIGN KEY (id_userTask) REFERENCES userTask(id)
 );
