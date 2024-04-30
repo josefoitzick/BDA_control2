@@ -111,3 +111,34 @@ Frontend:
 4. Abre tu navegador web y accede a la URL proporcionada por el servidor de desarrollo (generalmente, [http://localhost:3000/](http://localhost:3000/)) para ver tu proyecto en funcionamiento.
 
 ¡Listo! Ahora estás preparado para cargar datos en tu base de datos PostgreSQL desde un script SQL y ejecutar tu proyecto Vue.js desde IntelliJ IDEA.
+
+## 8. Probando funciones (POSTMAN - frontend incompleto)
+1. Para usar los endpoints de la API, en primer lugar registrarse por medio de un POST con JSON de la siguiente manera:
+   POST       http://localhost:8080/auth/register
+Rellenar  ..
+   {
+    "username":"..",
+    "firstname":"..",
+    "lastname":"..",
+    "password":"..",
+    "country":".."
+   }
+
+2. Realizar el login
+POST      http://localhost:8080/auth/login
+{
+  "username": " el previamente registrado.."
+  "password": "el previamente registrado.."
+}
+
+
+3. Copiar el token obtenido, en Headers, agregar en la 1ra fila Authorization, y escribir en Value Bearer + el token recien obtenido
+POST     http://localhost:8080/api/tasks
+{
+    "id_usertask":"id del usuario previamente creado",
+    "title":"holaasdasd",
+    "description":"descripcion",
+    "due_date":"2024-05-01"
+}
+
+Y asi se podria ir probando las demas controllers de la API.
