@@ -96,7 +96,8 @@ Después de ejecutar el script, verifica que los datos se hayan cargado correcta
 Frontend:
 
 1. Abre VSC -> open folder -> selecciona frontend
-2. Ejecuta npm run dev
+  
+2. Ejecuta npm run dev, (En caso de no estar las dependencias instaladas `npm install`)
    Nota: En el front end las ventanas de login y register estan completas, lo demas no fue logrado.
    
 ## 7. Ejecución del Proyecto desde IntelliJ IDEA
