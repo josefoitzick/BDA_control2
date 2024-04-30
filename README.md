@@ -108,6 +108,6 @@ Frontend:
 
 3. Inicia el servidor de desarrollo de Vue.js ejecutando `npm run dev` desde la terminal en la carpeta de tu proyecto.
 
-4. Abre tu navegador web y accede a la URL proporcionada por el servidor de desarrollo (generalmente, [http://localhost:5173/](http://localhost:5173/)) para ver tu proyecto en funcionamiento.
+4. Abre tu navegador web y accede a la URL proporcionada por el servidor de desarrollo (generalmente, [http://localhost:3000/](http://localhost:3000/)) para ver tu proyecto en funcionamiento.
 
 ¡Listo! Ahora estás preparado para cargar datos en tu base de datos PostgreSQL desde un script SQL y ejecutar tu proyecto Vue.js desde IntelliJ IDEA.
