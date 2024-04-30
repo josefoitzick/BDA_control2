@@ -17,7 +17,7 @@ public class TaskRepositoryImp implements TaskRepository{
     public Task save(Task task){
         try(Connection con = sql2o.open()){
             Long id = (Long) con.createQuery("INSERT INTO Task (id_usertask, title, description, completed, due_date) " +
-                            "VALUES (:id_usertask, :title, :description, :due_date, :completed)")
+                            "VALUES (:id_usertask, :title, :description, :completed, :due_date)")
                     .addParameter("id_usertask", task.getId_usertask())
                     .addParameter("title", task.getTitle())
                     .addParameter("description", task.getDescription())

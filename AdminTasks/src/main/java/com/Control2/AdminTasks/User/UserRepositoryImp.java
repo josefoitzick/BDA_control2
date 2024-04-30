@@ -14,11 +14,14 @@ public class UserRepositoryImp implements UserRepository{
 
     @Autowired
     private Sql2o sql2o;
+
     @Override
     public Optional<User> findByUsername(String username) {
         try (Connection con = sql2o.open()) {
-            User user = con.createQuery("SELECT * FROM userTask WHERE username = :username")
-                    .addParameter("username", username)
+            StringBuilder query = new StringBuilder("SELECT * FROM userTask WHERE username = ");
+            query.append("LOWER(:username)"); // Escape username using LOWER function
+            User user = con.createQuery(query.toString())
+                    .addParameter("username", username.toLowerCase()) // Convert input to lowercase
                     .executeAndFetchFirst(User.class);
             return Optional.ofNullable(user);
         } catch (Exception e) {
@@ -27,29 +30,30 @@ public class UserRepositoryImp implements UserRepository{
         }
     }
 
+
     @Override
-    public User save(User user){
-        try(Connection con = sql2o.open()){
-            Long id = (Long) con.createQuery("INSERT INTO userTask(country, firstname, lastname, password, role, username)" +
-                            "VALUES(:country, :firstname, :lastname, :password, :role, :username)")
+    public User save(User user) {
+        try (Connection con = sql2o.open()) {
+            StringBuilder query = new StringBuilder("INSERT INTO userTask");
+            query.append("(country, firstname, lastname, password, role, username) ");
+            query.append("VALUES (:country, :firstname, :lastname, :password, :role, :username)");
+
+            Long id = (Long) con.createQuery(query.toString())
                     .addParameter("country", user.getCountry())
                     .addParameter("firstname", user.getFirstname())
                     .addParameter("lastname", user.getLastname())
                     .addParameter("password", user.getPassword())
                     .addParameter("role", user.getRole())
-                    .addParameter("username", user.getUsername())
+                    .addParameter("username", user.getUsername().toLowerCase()) // Escape username
                     .executeUpdate().getKey();
 
-            // Asignamos el ID generado automáticamente al usuario
             user.setId(id);
-
             return user;
-        } catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
     }
-
 
     @Override
     public List<User> findAll() {
@@ -64,11 +68,11 @@ public class UserRepositoryImp implements UserRepository{
 
     @Override
     public User findById(Long id) {
-        try(Connection con = sql2o.open()){
-            return con.createQuery("SELECT * FROM userTask WHERE id = *id")
-                    .addParameter("id",id)
+        try (Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM userTask WHERE id = :id")
+                    .addParameter("id", id)
                     .executeAndFetchFirst(User.class);
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
@@ -77,8 +81,12 @@ public class UserRepositoryImp implements UserRepository{
     @Override
     public User update(User user) {
         try (Connection con = sql2o.open()) {
-            con.createQuery("UPDATE userTask SET country = :country, firstname = :firstname, lastname = :lastname, " +
-                            "password = :password, role = :role, username = :username WHERE id = :id")
+            StringBuilder query = new StringBuilder("UPDATE userTask SET ");
+            query.append("country = :country, firstname = :firstname, lastname = :lastname, ");
+            query.append("password = :password, role = :role, username = :username ");
+            query.append("WHERE id = :id");
+
+            con.createQuery(query.toString())
                     .bind(user)
                     .executeUpdate();
             return user;
