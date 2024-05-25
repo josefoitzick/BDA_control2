@@ -6,6 +6,7 @@
 * Felipe Carrasco
 * Gabriel Cabrera
 * Ivan Misle
+* Juan Cardenas
 
 # Herramientas de desarrollo
 
