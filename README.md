@@ -13,8 +13,7 @@
 * Postgres SQL versión 12
 * PgAdmin versión 4
 * Visual Studio Code
-* POSTGIS
-* QGIS
+
   
 ## Backend
 * IntelliJ IDEA Ultimate
@@ -30,7 +29,7 @@ Esta guía te ayudará a configurar tu entorno de desarrollo para trabajar con I
 
 ## 1. Clonar el repositorio
 
-git clone https://github.com/Irictm/Lab2_TBD.git
+git clone https://github.com/josefoitzick/BDA_control2.git
 
 ## 2. Instalación de IntelliJ IDEA
 
@@ -52,13 +51,6 @@ git clone https://github.com/Irictm/Lab2_TBD.git
 
 2. Instala pgAdmin siguiendo las instrucciones para tu sistema operativo.
 
-### 3.3 Instalacion de POSTGIS
-
-1. Abrir StackBuillder, seleccionar POSTGRESQL 12
-
-2. Seleccionar Spacial Extensions, marcar la casilla PostGis 3.4 Bundle for PostgreSQL, continua con next para finalizar la instalación. 
-
-## 5. Crear base de datos y cargar información
 
 ### 5.1 Crear base de datos
 
@@ -123,3 +115,45 @@ Frontend:
 
 ¡Listo! Ahora estás preparado para cargar datos en tu base de datos PostgreSQL desde un script SQL y ejecutar tu proyecto Vue.js desde IntelliJ IDEA.
 
+7. Ejecución del Proyecto desde IntelliJ IDEA
+
+1. Abre IntelliJ IDEA y abre tu proyecto de Nuxt.js en la carpeta de frontend.
+
+2. Asegúrate de que todas las dependencias de tu proyecto estén instaladas. Puedes hacerlo ejecutando npm install desde la terminal en la carpeta de tu proyecto.
+
+3. Inicia el servidor de desarrollo de Vue.js ejecutando npm run dev desde la terminal en la carpeta de tu proyecto.
+
+4. Abre tu navegador web y accede a la URL proporcionada por el servidor de desarrollo (generalmente, http://localhost:3000/) para ver tu proyecto en funcionamiento.
+
+¡Listo! Ahora estás preparado para cargar datos en tu base de datos PostgreSQL desde un script SQL y ejecutar tu proyecto Vue.js desde IntelliJ IDEA.
+
+## 8. Probando funciones (POSTMAN - frontend incompleto)
+1. Para usar los endpoints de la API, en primer lugar registrarse por medio de un POST con JSON de la siguiente manera:
+   POST       http://localhost:8080/auth/register
+Rellenar  ..
+   {
+    "username":"..",
+    "firstname":"..",
+    "lastname":"..",
+    "password":"..",
+    "country":".."
+   }
+
+2. Realizar el login
+POST      http://localhost:8080/auth/login
+{
+  "username": " el previamente registrado.."
+  "password": "el previamente registrado.."
+}
+
+
+3. Copiar el token obtenido, en Headers, agregar en la 1ra fila Authorization, y escribir en Value Bearer + el token recien obtenido
+POST     http://localhost:8080/api/tasks
+{
+    "id_usertask":"id del usuario previamente creado",
+    "title":"holaasdasd",
+    "description":"descripcion",
+    "due_date":"2024-05-01"
+}
+
+Y asi se podria ir probando las demas controllers de la API.
